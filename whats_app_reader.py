@@ -1,3 +1,4 @@
+#This file reads whatsapp dump and lists the number of messages sent by each sender
 import pandas as pd
 from tkinter import * 
 from tkinter.filedialog import askopenfilename
