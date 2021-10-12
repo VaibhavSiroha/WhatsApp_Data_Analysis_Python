@@ -1,13 +1,9 @@
 #This file reads whatsapp dump and lists the number of messages sent by each sender
 import pandas as pd
 from tkinter import * 
-from tkinter.filedialog import askopenfilename
-file_path = askopenfilename()
-<<<<<<< HEAD
-# I have added this comment to test something
-=======
-#added another bogus comment
->>>>>>> graph
+import matplotlib.pyplot as plt
+file_path = 'chat.txt'
+
 with open(file_path, mode='r', encoding="utf8") as f:
     data = f.readlines()
 dataset = data[1:]
@@ -38,13 +34,7 @@ dfNew = df[filter]
 #df['Message'].replace('', np.nan, inplace=True)
 #print(df)
 #dfNew.to_excel("output.xlsx")
-x=dfNew['Name'].value_counts(ascending=False)
-def printSomething():
-    print(x)
-
-root = Tk()
-
-button = Button(root, text="Print Me", command=printSomething)
-button.pack()
-
-root.mainloop()
+x=dfNew['Name'].value_counts(ascending=False).plot(kind='bar');
+#y=dfNew['Name'].value_counts(ascending=False).plot(kind='pie');
+plt.show()
+input("")
